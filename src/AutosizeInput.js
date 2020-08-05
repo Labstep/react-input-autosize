@@ -116,7 +116,8 @@ class AutosizeInput extends Component {
 		if (newInputWidth < this.props.minWidth) {
 			newInputWidth = this.props.minWidth;
 		}
-		if (newInputWidth !== this.state.inputWidth) {
+		const diff = Math.abs(newInputWidth - this.state.inputWidth);
+		if (newInputWidth !== this.state.inputWidth && diff > 1) {
 			this.setState({
 				inputWidth: newInputWidth,
 			});
